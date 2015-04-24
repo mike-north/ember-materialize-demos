@@ -1,0 +1,45 @@
+
+{{!-- The "Open Modal" button --}}
+{{md-btn action=toggleModal
+         text="Show Modal"
+         action='toggleModal'}}
+
+{{!-- The Modal --}}
+{{#if isModalShown}}
+  {{#md-modal close='toggleModal'
+              class="test-modal"}}
+
+    {{!-- The body of the modal --}}
+    <div class="modal-content">
+      <h4>Hello Modal</h4>
+      <p>Oh hai there!</p>
+    </div>
+
+    {{!-- The actions at the bottom of the modal --}}
+    <div class="modal-footer">
+
+      {{!-- Modal's Agree Button --}}
+      <a class="modal-action
+                modal-close
+                waves-effect
+                waves-green
+                btn-flat
+                agree-button"
+          {{action 'agree'}}>
+        Agree
+      </a>
+
+      {{!-- Modal's Cancel Button --}}
+      <a class="modal-action
+                modal-close
+                waves-effect
+                waves-green
+                btn-flat
+                cancel-button"
+          {{action 'toggleModal'}}>
+        Cancel
+      </a>
+
+    </div> {{!-- .modal-footer --}}
+  {{/md-modal}}
+{{/if}}
